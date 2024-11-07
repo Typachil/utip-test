@@ -26,3 +26,5 @@ export const TableRow: FC<TableRowProps> = ({
         </tr>
     );
 };
+
+TableRow.displayName = 'TableRow';

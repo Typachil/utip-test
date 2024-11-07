@@ -48,3 +48,9 @@
     color: var(--color-black);
   }
 }
+
+@include m.media-mobile-query {
+  .form {
+    margin-top: 10px;
+  }
+}

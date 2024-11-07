@@ -7,8 +7,8 @@ import {useNavigate} from "react-router-dom";
 
 interface FormValues {
     name: string;
-    height: string;
-    mass: string;
+    height: number;
+    mass: number;
     hair_color: string;
     skin_color: string;
 }
@@ -32,8 +32,8 @@ const FormPage = observer(() => {
     const addForm = useFormik({
         initialValues: {
             name: '',
-            height: '',
-            mass: '',
+            height: 0,
+            mass: 0,
             hair_color: '',
             skin_color: '',
         },
@@ -74,7 +74,7 @@ const FormPage = observer(() => {
                 <label className={'form__label'}>
                     <p className={'form__label-text'}>Введите Рост</p>
                     <input
-                        type="text"
+                        type="number"
                         placeholder="150"
                         {...addForm.getFieldProps('height')}
                     />
@@ -85,7 +85,7 @@ const FormPage = observer(() => {
                 <label className={'form__label'}>
                     <p className={'form__label-text'}>Введите Массу</p>
                     <input
-                        type="text"
+                        type="number"
                         placeholder="70"
                         {...addForm.getFieldProps('mass')}
                     />

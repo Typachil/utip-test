@@ -19,6 +19,27 @@
 
   tr {
     cursor: grab;
+    transition: background-color var(--app-transition-quick) ease-in-out;
+  }
+
+  &__heading-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &--current-sort {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: var(--color-light-gray);
+      }
+    }
   }
 
   &__modal-title {
@@ -64,6 +85,38 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
+@include m.media-tablet-query {
+  .table {
+    @include m.fontAdaptive(16px, 20px);
+  }
+}
+
+@include m.media-mobile-query {
+  .table {
+    th, td {
+      padding: 5px;
+      @include m.fontAdaptive(12px, 20px);
+    }
+
+
+    &__heading-text {
+      gap: 5px;
+      flex-direction: column;
+      text-align: center;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__resize-handle {
+      width: 3px;
+    }
+  }
+}
+
 
 @keyframes rotation {
   0% {

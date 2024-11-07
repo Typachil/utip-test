@@ -1,14 +1,13 @@
-
 export interface TableHeadType {
     name: string,
-    width: number
+    id: string
 }
 
 export interface TableRowType {
     id: number
     name: string,
-    height: string,
-    mass: string,
+    height: number,
+    mass: number,
     hair_color: string,
     skin_color: string,
 }

@@ -64,3 +64,10 @@
   }
 }
 
+@include m.media-tablet-query {
+  .button {
+    @include m.fontAdaptive(12px, 18px);
+    padding: 5px;
+  }
+}
+

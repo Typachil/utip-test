@@ -1,16 +1,9 @@
 import { makeAutoObservable } from 'mobx';
-import {TableHeadType, TableRowType} from "@/shared/types/table.ts";
+import {TableRowType} from "@/shared/types/table.ts";
 
 export class TableStore {
   data: TableRowType[] = [];
   dataCount: number = 0;
-  tableHeadlines: TableHeadType[] = [
-    {name: 'name', width: 150},
-    {name: 'height', width: 100},
-    {name: 'mass', width: 100},
-    {name: 'hair_color', width: 100},
-    {name: 'skin_color', width: 100},
-  ];
   currentPage: number = 1;
   rowsPerPage: number = 10;
   sortField: string = 'col1'; // Поле для сортировки
@@ -63,17 +56,17 @@ export class TableStore {
     this.data.splice(toIndex, 0, row);
   }
 
-  setWidthTableHeadlines = (arr: TableHeadType[]) => {
-    this.tableHeadlines = arr
-  }
-
   sortData = (field: string) => {
     this.sortField = field;
     this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
 
     this.data.sort((a : TableRowType, b : TableRowType) => {
-      if (a[field as keyof TableRowType] < b[field as keyof TableRowType]) return this.sortOrder === 'asc' ? -1 : 1;
-      if (a[field as keyof TableRowType] > b[field as keyof TableRowType]) return this.sortOrder === 'asc' ? 1 : -1;
+      if (a[field as keyof TableRowType] < b[field as keyof TableRowType]) {
+        return this.sortOrder === 'asc' ? -1 : 1;
+      }
+      if (a[field as keyof TableRowType] > b[field as keyof TableRowType]) {
+        return this.sortOrder === 'asc' ? 1 : -1;
+      }
       return 0;
     });
   }

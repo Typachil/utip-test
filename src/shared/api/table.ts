@@ -14,8 +14,8 @@ export const fetchData = async (page: number) => {
         setData(data.results.map((item: TableRowType, index: number) => ({
             id: index + 1,
             name: item.name,
-            height: item.height,
-            mass: item.mass,
+            height: +item.height || '',
+            mass: +item.mass || '',
             hair_color: item.hair_color,
             skin_color: item.skin_color,
         })));

@@ -1,5 +1,3 @@
-'use client';
-
 import { FC, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
