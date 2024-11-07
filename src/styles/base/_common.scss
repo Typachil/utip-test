@@ -1,0 +1,61 @@
+@use '@/styles/abstracts/mixins.scss' as m;
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  --container-indent: 100px;
+  --max-width: 1720px;
+
+  max-width: calc(var(--max-width) + (var(--container-indent) * 2));
+  margin: 0 auto;
+  padding: 0 var(--container-indent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  @include m.font(Verdana, 36px, 46px, 400);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.overflow {
+  &--hidden {
+    overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@include m.media-tablet-query {
+  .container {
+    --container-indent: 30px;
+  }
+}
+
+@include m.media-mobile-query {
+  .container {
+    --container-indent: 10px;
+  }
+
+  h1 {
+    @include m.fontAdaptive(26px, 36px);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

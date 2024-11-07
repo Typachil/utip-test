@@ -1,0 +1,28 @@
+:root {
+  /* Typography */
+
+  /* Colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #222222;
+  --color-light-gray: #f2f2f2;
+  --color-primary: #4681f4;
+  --color-secondary: #a881af;
+  --color-error: #ED0800;
+  --color-success: #33b249;
+
+  /* Icon */
+  --app-icon-size-small: 16px;
+  --app-icon-size-medium: 20px;
+  --app-icon-size-default: 24px;
+
+  /* Other  */
+  --app-transition-quick: 100ms;
+  --app-transition-default: 250ms;
+  --app-transition-smooth: 300ms;
+  --app-transition-long: 500ms;
+
+  --media-laptop-query: 1512px;
+  --media-tablet-query: 960px;
+  --media-mobile-query: 375px;
+}
