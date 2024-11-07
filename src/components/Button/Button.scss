@@ -1,0 +1,66 @@
+@use '@/styles/abstracts/mixins.scss' as m;
+
+.button {
+  height: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  width: max-content;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  @include m.font(Verdana, 16px, 20px, 400);
+  transition: all var(--app-transition-default) ease-in-out;
+  color: var(--color-white);
+
+  &--primary {
+    background-color: var(--color-primary);
+
+    &:hover {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+
+    &:hover {
+      border-color: var(--color-secondary);
+    }
+  }
+
+  &--error {
+    background-color: var(--color-error);
+
+    &:hover {
+      border-color: var(--color-error);
+    }
+  }
+
+  &--success {
+    background-color: var(--color-success);
+
+    &:hover {
+      border-color: var(--color-success);
+    }
+  }
+
+  &:hover {
+    background: transparent;
+    color: var(--color-gray);
+  }
+
+  &:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    border-color: transparent;
+    pointer-events: none;
+    touch-action: none;
+  }
+}
+

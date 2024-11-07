@@ -1,0 +1,10 @@
+/* Abstracts */
+@use './abstracts/variables.scss';
+
+/* Base */
+@use './base/reset.scss';
+@use './base/common.scss';
+
+/* Pages */
+@use './pages/index.scss';
+@use './pages/form.scss';
