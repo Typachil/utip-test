@@ -4,6 +4,9 @@ import * as path from "node:path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  build : {
+    outDir: "build"
+  },
   plugins: [react()],
   resolve: {
     alias: {
